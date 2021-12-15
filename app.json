@@ -4,7 +4,7 @@
     "repository": "https://github.com/AnossaTG/GoogleBot",
     "keywords": ["Google Translater", "pyrogram", "telegram bot"],
     "env": {
-        "TOKEN": {
+        "BOT_TOKEN": {
             "description": "Your Bot token from @Botfather"
         },
         "API_ID": {
