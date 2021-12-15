@@ -18,14 +18,14 @@ Bot = Client(
 
 
 START_TEXT = """Merhaba {}
-Ben bir google arama botuyum.
+Ben bir Google arama botuyum.
 
 > `Google'dan arama yapabilirim. Beni satır içinde kullan.`"""
 
 JOIN_BUTTON = [
     InlineKeyboardButton(
         text='⚙ Güncelleme kanalına katıl ⚙',
-        url='https://telegram.me/PhysicalBots'
+        url='https://t.me/PhysicalBots'
     )
 ]
 
