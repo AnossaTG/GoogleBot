@@ -17,17 +17,15 @@ Bot = Client(
 )
 
 
-START_TEXT = """Hello {}
-I am a google search bot.
+START_TEXT = """Merhaba {}
+Ben bir google arama botuyum.
 
-> `I can search from google. Use me in inline.`
-
-Made by @FayasNoushad"""
+> `Google'dan arama yapabilirim. Beni satır içinde kullan.`"""
 
 JOIN_BUTTON = [
     InlineKeyboardButton(
-        text='⚙ Join Updates Channel ⚙',
-        url='https://telegram.me/FayasNoushad'
+        text='⚙ Güncelleme kanalına katıl ⚙',
+        url='https://telegram.me/PhysicalBots'
     )
 ]
 
@@ -45,11 +43,11 @@ async def start(bot, update):
 @Bot.on_message(filters.private & filters.text)
 async def filter(bot, update):
     await update.reply_text(
-        text="`Click the button below for searching...`",
+        text="`Aramak için aşağıdaki butona tıklayınız...`",
         reply_markup=InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton(text="Search Here", switch_inline_query_current_chat=update.text)],
-                [InlineKeyboardButton(text="Search in another chat", switch_inline_query=update.text)]
+                [InlineKeyboardButton(text="Arama Yao", switch_inline_query_current_chat=update.text)],
+                [InlineKeyboardButton(text="İnline arama yap", switch_inline_query=update.text)]
             ]
         ),
         disable_web_page_preview=True,
@@ -86,9 +84,9 @@ def google(query):
     informations = r.json()["results"][:50]
     results = []
     for info in informations:
-        text = f"**Title:** `{info['title']}`"
-        text += f"\n**Description:** `{info['description']}`"
-        text += f"\n\nMade by @FayasNoushad"
+        text = f"**Başlık:** `{info['title']}`"
+        text += f"\n**Açıklama:** `{info['description']}`"
+        text += f"\n\nArama __başarıyla__ sonuçlandı"
         results.append(
             {
                 "title": info['title'],
